@@ -1,0 +1,134 @@
+/* mobile & tablet*/
+@media (max-width:1023px){
+    :root{
+        --height-header:68px;
+        --height-header-nav:0px;
+        --height-hsb:46px;
+    }
+   
+    .hide-on-mb-tl{
+        display: none;
+    }
+    .header{
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        top: 0;
+    }
+
+    .cart-wrap{
+        height: var(--height-header);
+        top: 20px;
+    }
+    .cart-list{
+        position: fixed;
+        top: var(--height-header);
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+    .cart-list::after{
+        display: none;
+    }
+    .header-sort-bar{
+        display: flex;
+    }
+    .hsb-item:hover .hsb-lable-list{
+        display: block;
+    }
+    .shop__contain{
+        margin-top: calc((var(--height-header)) + (var(--height-hsb))) ;
+    }
+    
+    .header__search{
+        position: fixed;
+        top: var(--height-header) ;
+        left: 0;
+        right: 0;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        z-index: 1;
+        padding: 0 16px 0 0;
+        border-bottom-left-radius:2px ;
+        border-bottom-right-radius:2px ;
+        animation: mb-tl-Search linear 0.3s;
+
+        display: none; 
+    }
+    .header-mbSearch-check:checked ~ .header__search {
+        display: flex;
+    }
+    @keyframes mb-tl-Search {
+        from{
+            opacity: 0;
+            top:calc( var(--height-header) / 2);
+
+        }
+        to{
+            opacity: 1;
+            top:var(--height-header) ;
+
+        }
+    }
+    
+}
+
+
+/*tablet*/
+@media (min-width:740px) and (max-width:1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__second{
+        justify-content: space-between;
+    }
+    .header__logo {
+        width: 175px;
+    }
+    .header__cart{
+        text-align: right;
+        width: 55px;
+    }
+}
+
+
+/* mobile */
+@media (max-width:739px){
+    .hide-on-mobile{
+        display: none;
+    }
+
+    .header__second{
+        justify-content: space-between;
+    }
+    .header__logo,
+    .header__cart{
+        width: unset;
+    }
+    
+    
+    .pagination-item{
+        margin: 0;
+    }
+    .pagination-item-link{
+        min-width: 35px;
+        font-size: 1.6rem;
+        height: 28px;
+
+    }
+    .pagination-sc{
+        padding-left:0 ;
+    }
+    .ft-heading,
+    .ft-item{
+        text-align: center;
+    }
+    .search-history {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: calc(var(--height-header) + var(--height-hsb));
+        box-shadow: 0 4px 0px rgb(0 0 0 / 5%);
+
+    }
+}
